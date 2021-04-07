@@ -43,21 +43,12 @@ class LinkedList
     return count
   end
 
-  def add(number)
+  def add(data)
     #create a new node 
-    this_node = Node.new(number)
-    if @head.nil?
-       @head = this_node
-      return
-    end
-
-    current = @head  
-    #until current.nil means until we reach the last node
-    until current.next_node.nil?
-      current = current.next_node
-    end
- 
-    #point current(last node) to our new node
-    current.next_node = this_node
+    # this one is an improvement we add at the head, takes O(1) time
+    new_node = Node.new(data)
+    new_node.next_node = @head
+    @head = new_node
   end
+  
 end
