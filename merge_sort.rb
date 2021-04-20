@@ -5,7 +5,8 @@ def merge_sort(list) # an array
   #Divide:  Find the  mid point of the list and divide  into sublists
   #Conquer  Recursively sort the sublist  created in previous step
   #Combine Merge the sorted sublists created  in previous step
-
+  
+  #Takes O(n log n) time
   # this is the stoping condition
   return list if list.length <= 1
 
@@ -19,6 +20,7 @@ end
 def split(list)
   # Divide the unsorted list  into sublists
   # Returns two sublists - left and right
+  # Takes overall or O(log n) time
   mid_point = list.length/2
   left = list.slice(0...mid_point)
   right = list.slice(mid_point...list.length)
@@ -27,6 +29,7 @@ def split(list)
 end
 
 def merge(left_array, right_array)
+  # Takes overall O(n)
   sorted_array = []
   # If either array is empty we don't need to compare them
   while !left_array.empty? && !right_array.empty? do
